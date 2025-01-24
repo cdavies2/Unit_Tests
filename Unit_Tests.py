@@ -74,7 +74,15 @@ class TestStringMethods(unittest.TestCase):
         with self.assertRaises(TypeError):
             fish=Pet("Bubbles", 5) # make sure the TypeError results if you send a nonString variable in
         
-
+    #seeing if we can define a method inside of a unit test
+    def test_method(self):
+        dog=5
+        def hypo(dog: int):
+            cat=dog+1
+            return cat
+            
+        cat=hypo(dog)
+        self.assertTrue(cat>dog)
 
 if __name__ == '__main__':
     unittest.main()
