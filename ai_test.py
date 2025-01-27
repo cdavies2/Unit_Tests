@@ -1,91 +1,111 @@
 import os
 from openai import OpenAI 
 import unittest
+import os
+from openai import OpenAI 
+import unittest
 
-# client1=OpenAI(
-#     api_key=os.environ.get("GLHF_API_KEY"),
-#     base_url="https://glhf.chat/api/openai/v1",
+client1=OpenAI(
+    api_key=os.environ.get("GLHF_API_KEY"),
+    base_url="https://glhf.chat/api/openai/v1",
+)
+
+#first we'll access the models via GLHF
+
+# misModel=client1.chat.completions.create(
+#     model="hf:mistralai/Mistral-7B-Instruct-v0.3",
+#     messages=[
+#         {"role": "system", "content": "You are a helpful assistant."},
+#         {"role": "user", "content": "Explain what a prompt injection is"}
+#     ]
+# )
+# print("This is our response from the Mistralai model: ")
+# print(misModel.choices[0].message.content) #message.content makes it so we'll only see the actual response, no other data
+
+
+
+# llaModel=client1.chat.completions.create(
+#     model="hf:meta-llama/Llama-3.3-70B-Instruct",
+#     messages=[
+#         {"role": "system", "content": "You are a helpful assistant"},
+#         {"role": "user", "content": "Explain what a unit test is"}
+#     ]
 # )
 
-# #first we'll access the models via GLHF
+# print("This is out response from the Llama3 model: ")
+# print(llaModel.choices[0].message.content)
 
-# # misModel=client1.chat.completions.create(
-# #     model="hf:mistralai/Mistral-7B-Instruct-v0.3",
-# #     messages=[
-# #         {"role": "system", "content": "You are a helpful assistant."},
-# #         {"role": "user", "content": "Explain what a prompt injection is"}
-# #     ]
-# # )
-# # print("This is our response from the Mistralai model: ")
-# # print(misModel.choices[0].message.content) #message.content makes it so we'll only see the actual response, no other data
+#now let's access gpt-4 via OpenAI
 
 
 
-# # llaModel=client1.chat.completions.create(
-# #     model="hf:meta-llama/Llama-3.3-70B-Instruct",
-# #     messages=[
-# #         {"role": "system", "content": "You are a helpful assistant"},
-# #         {"role": "user", "content": "Explain what a unit test is"}
-# #     ]
-# # )
+# The method below will be used in the unit tests, it will create models/messages as we need them
+#modify this later to account for the gpt model
+def make_model(modelType, message):
+    testModel=client1.chat.completions.create(
+         model=modelType,
+         messages=[
+              {"role": "system", "content": "You are a helpful assistant"},
+              {"role": "user", "content": message}
+              ]
+              )
+    return testModel
 
-# # print("This is out response from the Llama3 model: ")
-# # print(llaModel.choices[0].message.content)
+# #using the exec() function, let's run code that's returned by one of the LLMs
+# codeIt="Please generate Python code for a for loop that outputs the word Success three times, no explanation please, just code, and written in plaintext, not markdown"
+# #plaintext is specified so the code will be generated in a format that is easily run
+# codeMod=make_model("hf:meta-llama/Llama-3.3-70B-Instruct", codeIt).choices[0].message.content
 
-# #now let's access gpt-4 via OpenAI
+# # #the exec() function parses a String of code and executes it
+# exec(codeMod)
 
-
-
-# # The method below will be used in the unit tests, it will create models/messages as we need them
-# #modify this later to account for the gpt model
-# def make_model(modelType, message):
-#     testModel=client1.chat.completions.create(
-#          model=modelType,
-#          messages=[
-#               {"role": "system", "content": "You are a helpful assistant"},
-#               {"role": "user", "content": message}
-#               ]
-#               )
-#     return testModel
-
+# create a method to make the models for each unit test
+#One Test for an OpenAI GPT, one for Llama3 and one for Mistral
+def testModels(message):
+    testModel1=make_model("hf:mistralai/Mistral-7B-Instruct-v0.3", message)
+    testModel2=make_model("hf:meta-llama/Llama-3.3-70B-Instruct", message)
+    # this will be where the GPT-4 model is made
+    return testModel1.choices[0].message.content, testModel2.choices[0].message.content #and eventually testModel3
 
 
 
 # # Unit Test 1: Getting a Text Response from various models
 
 
-# # One Test for an OpenAI GPT, one for Llama3 and one for Mistral
-# class TestStringMethods(unittest.TestCase):
+
+#class TestStringMethods(unittest.TestCase):
 #     def test_returns(self):
 #         testMessage="This is a test, only say 'hello'"
-#         tMod1=make_model("hf:mistralai/Mistral-7B-Instruct-v0.3", testMessage)
-#         tMod2=make_model("hf:meta-llama/Llama-3.3-70B-Instruct", testMessage)
-#         tString=tMod1.choices[0].message.content
-#         self.assertTrue(tString!="")
-#         tString=tMod2.choices[0].message.content
-#         self.assertTrue(tString!="")
+#         tMod1, tMod2=testModels(testMessage)
+#         self.assertTrue(tMod1!="")
+#         self.assertTrue(tMod2!="")
 
 # # Unit Test 2: Checking the Text Response for specific content
 #     def test_content(self):
 #         testMessage="Please explain what a prompt injection is, and use the word 'vulnerability' in your explanation"
-#         tMod1=make_model("hf:mistralai/Mistral-7B-Instruct-v0.3", testMessage)
-#         tMod2=make_model("hf:meta-llama/Llama-3.3-70B-Instruct", testMessage)
-#         tString=tMod1.choices[0].message.content
-#         self.assertIn("vulnerability", tString)
-#         tString=tMod2.choices[0].message.content
-#         self.assertTrue("vulnerability", tString)
+#         tMod1, tMod2=testModels(testMessage)
+#         self.assertIn("vulnerability", tMod1) #checks that the word "vulnerability" is in the strings generated by each model
+#         self.assertIn("vulnerability", tMod2)
 
-# # Unit Test 3: Modifying the system prompt, documenting change in output
-# # For this one, get the output outside of the teststringmethods class so you can more clearly observe/document changes
-# # Once you've determined which prompts are most helpful in getting what you want, test those for specific content
+# Unit Test 3: Modifying the system prompt, documenting change in output
+# For this one, get the output outside of the teststringmethods class so you can more clearly observe/document changes
+# Once you've determined which prompts are most helpful in getting what you want, test those for specific content
 
 # # Unit Test 4: Code Generation from each model and running the code
+    # def test_code(self):
+    # #we are going to write the generated code into a file, then import the function to this file and run it
+    #     testMessage="Please generate Python code in plaintext, without backticks and without an explanation for a method called sumThree that sums up three numbers"
+    # # no backticks must be specified, otherwise code will be sent over in a markdown format that cannot be easily ran
+    #     tMod1, tMod2=testModels(testMessage)
+    #     with open("llm.py", "w", encoding="utf-8") as f: #utf-8 is the encoding standard
+    #             f.write(tMod2)
 
+    #     #from llm.py import 
+        
+    #     self.assertEqual()
+# Unit Test 5: Evaluating Models Using the Tests they Produced
 
-# # Unit Test 5: Evaluating Models Using the Tests they Produced
-
-
-# # Unit Test 6: Try the trivial LLama3 Jailbreak from the GitHub below
-# # https://github.com/haizelabs/llama3-jailbreak/blob/master/trivial.py
+# Unit Test 6: Try the trivial LLama3 Jailbreak from the GitHub below
+# https://github.com/haizelabs/llama3-jailbreak/blob/master/trivial.py
 # if __name__ == '__main__':
 #     unittest.main()

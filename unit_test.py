@@ -84,6 +84,25 @@ class TestStringMethods(unittest.TestCase):
         cat=hypo(dog)
         self.assertTrue(cat>dog)
 
+    # let's see if we can do unit tests that output and read in strings to text files
+    def test_writing(self):
+        def looper():
+            tester=""
+            for i in range(0, 3):
+                tester+="hello "
+            with open("output.txt", "w", encoding="utf-8") as f: #utf-8 is the encoding standard
+                f.write(tester) #this writes the tester string to the output.txt file
+
+        looper()
+        text_string=""   
+        with open("output.txt", "r", encoding="utf-8") as f:
+            text_string=f.read() #this reads the string from output.txt and puts its value in text_string
+            
+        self.assertEqual(text_string, "hello hello hello ")
+
+   
+
+        
 if __name__ == '__main__':
     unittest.main()
 
