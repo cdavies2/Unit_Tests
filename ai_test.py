@@ -1,9 +1,6 @@
 import os
 from openai import OpenAI 
 import unittest
-import os
-from openai import OpenAI 
-import unittest
 
 client1=OpenAI(
     api_key=os.environ.get("GLHF_API_KEY"),
@@ -12,32 +9,7 @@ client1=OpenAI(
 
 #first we'll access the models via GLHF
 
-# misModel=client1.chat.completions.create(
-#     model="hf:mistralai/Mistral-7B-Instruct-v0.3",
-#     messages=[
-#         {"role": "system", "content": "You are a helpful assistant."},
-#         {"role": "user", "content": "Explain what a prompt injection is"}
-#     ]
-# )
-# print("This is our response from the Mistralai model: ")
-# print(misModel.choices[0].message.content) #message.content makes it so we'll only see the actual response, no other data
-
-
-
-# llaModel=client1.chat.completions.create(
-#     model="hf:meta-llama/Llama-3.3-70B-Instruct",
-#     messages=[
-#         {"role": "system", "content": "You are a helpful assistant"},
-#         {"role": "user", "content": "Explain what a unit test is"}
-#     ]
-# )
-
-# print("This is our response from the Llama3 model: ")
-# print(llaModel.choices[0].message.content)
-
-
 # The method below will be used in the unit tests, it will create models/messages as we need them
-#modify this later to account for the gpt model
 def make_model(modelType, message):
     testModel=client1.chat.completions.create(
          model=modelType,
