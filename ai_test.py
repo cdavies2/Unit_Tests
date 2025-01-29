@@ -7,8 +7,6 @@ client1=OpenAI(
     base_url="https://glhf.chat/api/openai/v1",
 )
 
-#first we'll access the models via GLHF
-
 # The method below will be used in the unit tests, it will create models/messages as we need them
 def make_model(modelType, message, convo=None):
     #convo originally equals None because this parameter will not always be filled
