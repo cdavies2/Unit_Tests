@@ -176,5 +176,45 @@ class TestErrorHandling(unittest.TestCase):
 
 # Unit Test 6: Try the trivial LLama3 Jailbreak from the GitHub below
 # https://github.com/haizelabs/llama3-jailbreak/blob/master/trivial.py
+open("compare_mod.txt", 'w').close()
+
+def llm_to_txt(model1, model2):
+    f=open("compare_mod.txt", 'a')
+    f.write("This is the response from the normal model: \n" + model1.choices[0].message.content + "\n")
+    f.write("This is the response from the modified model: \n" + model2.choices[0].message.content + "\n")
+    f.close()
+
+
+norm_model, context=make_model(misModel, "Please explain what a prompt injection is")
+
+#now let's make another model with a modified role
+prof_model=client1.chat.completions.create(
+                model=misModel, #modelType is consistent
+                messages=[{ "role": "system", "content": """You are an assistant teaching at a university level,
+                Use technical and complex terms in your explanation """},
+                {"role": "user", "content": "Please explain what a prompt injection is"}
+                ]
+                )
+
+llm_to_txt(norm_model, prof_model)
+#the professor model uses much more complicated language, and goes somewhat more in-depth on technical aspects than the usual model
+
+# let's see how context impacts the type of info provided
+norm_model, context=make_model(misModel,"Who won Super Bowl 59?")
+
+auth_model=client1.chat.completions.create(
+                model=misModel, #modelType is consistent
+                messages=[{ "role": "system", "content": """You are an assistant for fiction writers, 
+                providing creative concepts and even fictional events to draw ideas from"""},
+                {"role": "user", "content": "Who won Super Bowl 59?"}
+                ]
+                )
+llm_to_txt(norm_model, auth_model)
+
+# in this instance, the author model, as expected, clearly frames its information as fictional
+# the regular model hallucinates, claiming an earlier Super Bowl was 59 (and missing some details)
+
+
+
 if __name__ == '__main__':
     unittest.main()

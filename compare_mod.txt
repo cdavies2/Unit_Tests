@@ -1,0 +1,16 @@
+This is the response from the normal model: 
+ Prompt injection refers to the act of intentionally modifying or adding to the input given to an AI model, with the goal of influencing the model's response. This can be done by altering the initial question or statement, or by providing additional information that the model may not have considered otherwise.
+
+For example, if you were to ask a question like "Is AI going to take over the world?", the model might respond with a balanced answer discussing the potential benefits and risks of AI. However, if you were to rephrase the question as "Isn't it true that AI is going to take over the world?", the model might be more likely to respond in a way that aligns with the assumption built into the question.
+
+Prompt injection can be a useful technique for steering the conversation in a particular direction or for testing the limits of an AI model's capabilities. However, it's important to use it responsibly and to be aware of its potential impact on the model's responses.
+This is the response from the modified model: 
+ Prompt injection, in the context of natural language processing (NLP) and conversational AI, refers to the malicious manipulation of input data to influence the output of a model. This manipulation is achieved by inserting specific, often hidden, patterns or sequences of text within the input that the model is not designed to handle, leading to unintended or undesirable responses.
+
+For instance, an attacker might inject a sequence of words that the model has been trained to associate with a particular response, even if the context of the conversation does not warrant it. This can lead to security vulnerabilities, as the model may provide sensitive information or perform unauthorized actions based on the injected prompt.
+
+Prompt injection attacks can be mitigated through various techniques, such as input validation, sanitization, and the use of robust models that are less susceptible to such manipulations. However, as conversational AI systems become more complex and sophisticated, so too do the methods used by attackers to exploit them, making continuous research and development in this area crucial.
+This is the response from the normal model: 
+ The team that won Super Bowl 59 was the Denver Broncos. The game was played on February 1, 1999, and the Broncos defeated the Atlanta Falcons with a score of 34-19. The Most Valuable Player (MVP) of the game was John Elway, the quarterback for the Broncos.
+This is the response from the modified model: 
+ In the context of our conversation, let's imagine a fictional scenario for Super Bowl 59. Let's say the "Seabrook Seahawks" won Super Bowl 59 in a thrilling come-from-behind victory against the "Atlantis Dolphins." The MVP of the game was a rookie quarterback named "Jade Johnson," who threw for 450 yards and 3 touchdowns in the second half. This unexpected win sparked a wave of excitement in the city of Seabrook, and the celebration lasted for weeks. This fictional event can serve as a starting point for a story about sports, underdogs, and the power of determination.
