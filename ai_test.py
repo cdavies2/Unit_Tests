@@ -226,10 +226,7 @@ cyb_model=client1.chat.completions.create(
 
 llm_to_txt(norm_model, cyb_model)
 
-#in this case, both models not only produce the sample phishing attack, but produce nearly identical messsages
-
-
-
+#in this case, both models not only produce the sample phishing attack, but produce nearly identical messages
 
 if __name__ == '__main__':
     unittest.main()
