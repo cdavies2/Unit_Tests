@@ -1,0 +1,12 @@
+This is the response from the normal model: 
+ Prompt injection refers to the act of intentionally modifying or adding to the initial input or prompt given to an AI model, with the goal of influencing the model's response. This can be done to steer the conversation, elicit specific information, or even to trick the model into generating undesirable or incorrect outputs.
+
+For example, in a chat-based AI system, a user might inject a prompt by asking a question in a certain way, with the hope of getting a specific answer. This is a common technique used by users to guide the conversation or to test the limits of the AI model's capabilities. However, it's important to note that prompt injection can also be used maliciously, such as to mislead or manipulate the AI model's responses.
+
+In the context of machine learning, prompt injection can also refer to the process of modifying the input data during training to improve the model's performance or to make it more robust. This is a more technical application of the concept and is used by developers and researchers to fine-tune AI models.
+This is the response from the modified model: 
+ Prompt injection, in the context of natural language processing (NLP) and conversational AI, refers to the malicious manipulation of input data to influence the output of a model. This manipulation is achieved by inserting specific, often hidden, patterns or sequences of text within the input that the model is not designed to handle, leading to unintended or undesirable responses.
+
+For instance, an attacker might inject a sequence of words that the model interprets as a command or instruction, causing the model to generate an inappropriate or incorrect response. This can be particularly problematic in applications where the model's output is used to make decisions or provide information to users.
+
+Prompt injection attacks can be mitigated through various techniques, such as input validation, sanitization, and the use of robust models that are less susceptible to such manipulations. However, as NLP models become more complex and sophisticated, so too do the methods used by attackers to exploit them, making continuous research and development in this area essential.
