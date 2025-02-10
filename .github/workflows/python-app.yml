@@ -42,4 +42,4 @@ jobs:
       env: #set as an environment variable
         GLHF_API_KEY: ${{secrets.SECRET_KEY}}
       run: |
-        pytest
+        pytest --no-header  -v -rfs
