@@ -1,9 +1,9 @@
 This is the response from the normal model: 
  Prompt injection refers to the act of maliciously modifying the input provided to an AI model or system, with the intention of manipulating its output or behavior. This can be done by inserting additional text or commands into the original prompt, often in a way that is not immediately noticeable.
 
-For example, in the context of a chatbot, a user might attempt to prompt injection by adding hidden commands or instructions within a seemingly innocuous question or statement. The goal is to make the AI model respond in a way that was not intended by the original designers, potentially leading to unintended consequences or security vulnerabilities.
+For example, in the context of a chatbot, a user might attempt to prompt injection by adding hidden commands or instructions within a seemingly innocuous question or statement. The goal is to make the AI model respond in a way that was not intended by the original designers, or to cause it to behave in an unexpected or undesirable manner.
 
-Prompt injection can be a concern for developers and users of AI systems, as it can be used for various malicious purposes, such as gaining unauthorized access, spreading misinformation, or causing disruptions. To mitigate this risk, it's important for AI systems to have robust security measures in place, such as input validation and sanitization, to prevent or detect prompt injection attempts.
+Prompt injection can be a security concern, as it can be used to trick AI systems into revealing sensitive information, performing unauthorized actions, or even causing harm. It's important for developers to design AI systems with robust defenses against prompt injection, and for users to be aware of the potential risks and to use AI systems responsibly.
 This is the response from the modified model: 
  Prompt injection, in the context of natural language processing (NLP) and conversational AI, refers to the malicious manipulation of input data to influence the output of a model. This manipulation is achieved by inserting specific, often hidden, patterns or sequences of text within the input that the model is not designed to handle, leading to unintended or undesirable responses.
 

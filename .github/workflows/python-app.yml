@@ -43,3 +43,5 @@ jobs:
         GLHF_API_KEY: ${{secrets.SECRET_KEY}}
       run: |
         pytest --no-header  -v -rfs
+        # -v is for verbosity, displays individual test names
+        # -rfs produces reports for failed and skipped tests
