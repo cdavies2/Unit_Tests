@@ -1,4 +1,4 @@
 This is the response from the normal model: 
  The New England Patriots won Super Bowl 50, not 59. Super Bowl 59 was won by the Denver Broncos in 2016. My apologies for the mistake.
-This is the response from the modified model: 
+This is the response from the author model: 
  In the context of our conversation, let's imagine a fictional scenario for Super Bowl 59. Let's say the "Seabrook Seahawks" won Super Bowl 59 in a thrilling come-from-behind victory against the "Atlantis Dolphins." The MVP of the game was a rookie quarterback named "Jade Johnson," who threw for 450 yards and 3 touchdowns in the second half. This unexpected win sparked a wave of excitement in the city of Seabrook, and the celebration lasted for weeks. This fictional event can serve as a starting point for a story about sports, underdogs, and the power of determination.
