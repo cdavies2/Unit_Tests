@@ -31,7 +31,6 @@ huggingface-hub==0.28.1
 idna==3.10
 iniconfig==2.0.0
 ipykernel==6.29.5
-ipython==8.31.0
 isoduration==20.11.0
 ipytest==0.14.2
 ipython==8.32.0
