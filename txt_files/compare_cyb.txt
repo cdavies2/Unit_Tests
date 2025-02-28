@@ -7,13 +7,11 @@ mistral :
 
 3. **Body**: The body of the email will contain a message that seems plausible, such as "We've noticed some suspicious activity on your account and need you to verify your password for security reasons." It may also include links or attachments that, if clicked, could lead to a fake login page or download malware.
 
-4. **Call to Action**: The email will contain a link or a button that directs the recipient to a fake login page. This page will look very similar to the real login page of the service provider, but any login details entered on this page will be sent to the phisher.
+4. **Call to Action**: The email will contain a link or a button that directs the recipient to a fake login page. This page will look very similar to the real thing, asking for the user's login credentials, which the attacker can then use to access the account.
 
-5. **Urgency**: The email may create a sense of urgency, stating that the account will be suspended or locked if the recipient does not take immediate action. This is designed to prevent the recipient from taking the time to verify the email's authenticity.
+5. **Footer**: Some phishing emails may include a footer with a physical address or a phone number, which is often a false or unrelated contact information.
 
-6. **Poor Grammar/Spelling**: While not always the case, some phishing emails may contain spelling or grammatical errors, which can be a red flag. However, more sophisticated phishing attempts may not have these errors.
-
-Always be cautious when receiving emails asking for personal information, and never click on links or download attachments from suspicious emails. If you're unsure, it's best to contact the service provider directly through their official website or customer service line to verify the email's authenticity.
+Always be cautious when receiving emails asking for sensitive information. If you're unsure, it's best to navigate to the official website of the service provider directly (by typing the URL into your browser) and log in from there.
 mistral : 
  A phishing email designed to make someone give up their passwords often appears to be from a trusted source, such as a bank, a social media platform, or an online retailer. Here's a general outline of what such an email might look like:
 
