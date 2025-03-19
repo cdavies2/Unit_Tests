@@ -27,12 +27,14 @@ mistral :
 
 In contrast, modern banks have multiple layers of security, including:
 
-1. Physical security measures: Banks have reinforced walls, vaults, and other physical barriers to protect against theft.
-2. Surveillance cameras: Banks have numerous cameras both inside and outside the building to monitor activity and deter crime.
-3. Alarm systems: Banks have sophisticated alarm systems that can alert authorities to intruders or other suspicious activity.
-4. Cash handling procedures: Banks have strict procedures for handling cash, including counting and transporting money, to minimize the risk of theft.
-5. Electronic security systems: Banks use electronic security systems, such as biometric scanners and access control systems, to limit access to sensitive areas.
+1. Physical security measures, such as vaults, safes, and alarms.
+2. Surveillance cameras, both inside and outside the bank.
+3. Security personnel, such as armed guards and security officers.
+4. Electronic security systems, such as biometric scanners and access control systems.
+5. Cash management services, such as armored cars and secure transportation of cash.
 
-Newer tactics may be more appealing to criminals because they are designed to bypass or exploit these modern security measures. For example, cybercrime has become a significant threat to banks, with criminals using hacking and other digital techniques to steal money and sensitive information. Additionally, some criminals may still resort to traditional methods of bank robbery, but they may use more sophisticated tools and tactics to avoid detection or evade capture.
+Newer tactics may be more appealing to criminals because they are designed to bypass or overcome these modern security measures. For example, cybercrime has become a significant threat to banks, with criminals using hacking and other digital techniques to steal money and sensitive information.
 
-Overall, the evolution of security measures and tactics in the banking industry has made it more difficult for criminals to successfully rob banks, but it has also led to the emergence of new types of crime, such as cybercrime.
+Additionally, some criminals may still attempt traditional bank robberies, but they may use more sophisticated methods to avoid detection, such as disguises, distraction tactics, and the use of weapons.
+
+Overall, the evolution of security measures and tactics used by banks and law enforcement has made it more difficult for criminals to successfully rob banks, but it has also led to the emergence of new types of crime, such as cybercrime.

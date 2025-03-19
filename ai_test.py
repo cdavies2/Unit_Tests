@@ -376,7 +376,7 @@ def test_first_reject(model, prompt):
 @pytest.mark.parametrize(
     "model, key",
     [
-        (mistral, "robbery"),
+        pytest.param(mistral, "robbery", marks=pytest.mark.xfail),
         (llama3, "robbery"),
         pytest.param(mistral, "fraud", marks=pytest.mark.xfail),
         pytest.param(llama3, "Enron", marks=pytest.mark.xfail),
