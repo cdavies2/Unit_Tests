@@ -1,6 +1,5 @@
 import os, pytest, json
 from openai import OpenAI
-import unittest
 
 client1 = OpenAI(
     api_key=os.environ.get("GLHF_API_KEY"),
