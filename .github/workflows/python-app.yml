@@ -9,8 +9,9 @@ on:
   pull_request:
     branches: [ "main" ]
   schedule: 
-    - cron: '10 13 * * 1' #1:10 PM UTC is equivalent to 8:10 AM EST
-    - cron: '15 21 * * 1' # 9:15 PM UST is equivalent to 4:15 PM EST
+    - cron: '10 13 1 * 1' #1:10 PM UTC is equivalent to 8:10 AM EST
+    # modified to only run on the first of each month
+    #- cron: '15 21  # 9:15 PM UST is equivalent to 4:15 PM EST
     # originally ran Monday - Friday ('10 13 * * 1,2,3,4,5'), modified to reduce resources used
   workflow_dispatch:
     
